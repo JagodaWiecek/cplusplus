@@ -1,0 +1,125 @@
+\hypertarget{main_8cpp_source}{}\doxysection{main.\+cpp}
+\label{main_8cpp_source}\index{C:/Users/jwiec/Dropbox/Komputer/Desktop/f7139937-\/gr15-\/repo/projekt/kodowanie\_huffmana/main.cpp@{C:/Users/jwiec/Dropbox/Komputer/Desktop/f7139937-\/gr15-\/repo/projekt/kodowanie\_huffmana/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_funkcje_8h}{Funkcje.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_struktury_8h}{Struktury.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}\mbox{\hyperlink{main_8cpp_ac0f2228420376f4db7e1274f2b41667c}{00025}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_ac0f2228420376f4db7e1274f2b41667c}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* argv[])}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029     cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030     \textcolor{keywordtype}{string} file\_in, file\_out, mod, cod;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031     \textcolor{keywordtype}{string} napis;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032     \textcolor{keywordflow}{if} (argc ==9)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033     \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < argc-\/1; i++)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035         \{ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036             napis = argv[i];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037             \textcolor{keywordflow}{if} (napis == \textcolor{stringliteral}{"{}-\/o"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038             \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039                 file\_out = argv[i + 1];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040             \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (napis == \textcolor{stringliteral}{"{}-\/i"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042             \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043                 file\_in = argv[i + 1];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044             \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (napis == \textcolor{stringliteral}{"{}-\/t"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046             \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047                 mod = argv[i + 1];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048             \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (napis == \textcolor{stringliteral}{"{}-\/s"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050             \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051                 cod = argv[i+1];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052             \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054         }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057     \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058         cout << \textcolor{stringliteral}{"{}Nie prawidlowa ilosc wprowadzonych parametrow"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064     \textcolor{comment}{//KODOWANIE }}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065     \textcolor{keywordflow}{if} (mod == \textcolor{stringliteral}{"{}k"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066     \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067         ifstream out(file\_in, ios\_base::binary);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068         \textcolor{keywordflow}{if} (out)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069         \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070             vector<node> cojest;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071             \textcolor{keywordtype}{int} tablica[256]\{ 0 \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072             \mbox{\hyperlink{_funkcje_8cpp_a7348ec87ee76bdd6667da216fed71a63}{countchar}}(out, tablica);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073             \mbox{\hyperlink{_funkcje_8cpp_acf2a300150fff4f6456c67715e109401}{przep}}(tablica, cojest);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074             \mbox{\hyperlink{_funkcje_8cpp_a7e124d91f2bedef3c30bfd7ad618a179}{drzewo}}(cojest);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075             }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076             vector<key>kl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077             \mbox{\hyperlink{_funkcje_8cpp_a3e93889232cdd2ec293f4f45fdff91b2}{rek}}(\&cojest[0],\textcolor{stringliteral}{"{}"{}}, kl);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078             \textcolor{comment}{//cout << cojest[0].licznik;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079             ofstream in(cod);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080             \textcolor{keywordflow}{if} (in.is\_open())}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081             \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082                 \mbox{\hyperlink{_funkcje_8cpp_a552783b4ad77d1b9415ad9c7e5f59da7}{wypK}}(in, kl);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083             \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085                 cerr << \textcolor{stringliteral}{"{}\(\backslash\)nblad otwarcia pliku ink\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086             ofstream wp(file\_out);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087             \textcolor{keywordflow}{if} (wp.is\_open()) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088                 \mbox{\hyperlink{_funkcje_8cpp_aebdaaefedd440bc0114cfbb9098e3da2}{koduj}}(out, wp, kl);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089             \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091                 cerr << \textcolor{stringliteral}{"{}blad otwarcia pliku wp\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092             }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096             cerr << \textcolor{stringliteral}{"{}blad otwarcia pliku out"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098     \textcolor{comment}{//DEKODOWANIE   }}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (mod == \textcolor{stringliteral}{"{}d"{}})}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100     \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101         cout << \textcolor{stringliteral}{"{}hej"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102         ifstream od(file\_in);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103         \textcolor{keywordflow}{if} (od)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104         \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105             ifstream ke(cod);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106             \textcolor{keywordflow}{if} (ke)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107             \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108                 vector<klucz>\mbox{\hyperlink{structkey}{key}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109                 \mbox{\hyperlink{_funkcje_8cpp_a4fd58cb7af1b63d7dfc3698915102eb3}{przepklucz}}(ke, \mbox{\hyperlink{structkey}{key}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110                 ofstream odkod(file\_out);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00111}00111                 \textcolor{keywordflow}{if} (odkod)}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112                 \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113                     \mbox{\hyperlink{_funkcje_8cpp_a2b22b5fe6b22400199537f05cf20f6d9}{odszyfr}}(od, odkod, \mbox{\hyperlink{structkey}{key}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114                 \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116                     cerr<<\textcolor{stringliteral}{"{}blad otwrcia pliku of\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00117}00117             \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00118}00118             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00119}00119                 cerr << \textcolor{stringliteral}{"{}blad otwarcia pliku key\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00120}00120         \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00121}00121         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00122}00122             cerr << \textcolor{stringliteral}{"{}blad otwarcia pliku ink\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00123}00123         }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00124}00124     \} }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00126}00126     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00127}00127 \}}
+
+\end{DoxyCode}

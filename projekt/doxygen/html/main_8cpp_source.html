@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Plik źródłowy C:/Users/jwiec/Dropbox/Komputer/Desktop/f7139937-gr15-repo/projekt/kodowanie_huffmana/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project<span id="projectnumber">&#160;final version</span>
+   </div>
+   <div id="projectbrief">Huffman</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="main_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_funkcje_8h.html">Funkcje.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_struktury_8h.html">Struktury.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c">   25</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c">main</a>(<span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span>* argv[])</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    cout &lt;&lt; <span class="stringliteral">&quot;--------------------------&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">string</span> file_in, file_out, mod, cod;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">string</span> napis;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (argc ==9)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; argc-1; i++)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        { </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            napis = argv[i];</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keywordflow">if</span> (napis == <span class="stringliteral">&quot;-o&quot;</span>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                file_out = argv[i + 1];</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (napis == <span class="stringliteral">&quot;-i&quot;</span>)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                file_in = argv[i + 1];</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (napis == <span class="stringliteral">&quot;-t&quot;</span>)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                mod = argv[i + 1];</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (napis == <span class="stringliteral">&quot;-s&quot;</span>)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                cod = argv[i+1];</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        cout &lt;&lt; <span class="stringliteral">&quot;Nie prawidlowa ilosc wprowadzonych parametrow&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">//KODOWANIE </span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">if</span> (mod == <span class="stringliteral">&quot;k&quot;</span>)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        ifstream out(file_in, ios_base::binary);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> (out)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            vector&lt;node&gt; cojest;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordtype">int</span> tablica[256]{ 0 };</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <a class="code hl_function" href="_funkcje_8cpp.html#a7348ec87ee76bdd6667da216fed71a63">countchar</a>(out, tablica);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <a class="code hl_function" href="_funkcje_8cpp.html#acf2a300150fff4f6456c67715e109401">przep</a>(tablica, cojest);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <a class="code hl_function" href="_funkcje_8cpp.html#a7e124d91f2bedef3c30bfd7ad618a179">drzewo</a>(cojest);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            vector&lt;key&gt;kl;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <a class="code hl_function" href="_funkcje_8cpp.html#a3e93889232cdd2ec293f4f45fdff91b2">rek</a>(&amp;cojest[0],<span class="stringliteral">&quot;&quot;</span>, kl);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="comment">//cout &lt;&lt; cojest[0].licznik;</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            ofstream in(cod);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordflow">if</span> (in.is_open())</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <a class="code hl_function" href="_funkcje_8cpp.html#a552783b4ad77d1b9415ad9c7e5f59da7">wypK</a>(in, kl);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                cerr &lt;&lt; <span class="stringliteral">&quot;\nblad otwarcia pliku ink\n&quot;</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            ofstream wp(file_out);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordflow">if</span> (wp.is_open()) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                <a class="code hl_function" href="_funkcje_8cpp.html#aebdaaefedd440bc0114cfbb9098e3da2">koduj</a>(out, wp, kl);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                cerr &lt;&lt; <span class="stringliteral">&quot;blad otwarcia pliku wp\n&quot;</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            cerr &lt;&lt; <span class="stringliteral">&quot;blad otwarcia pliku out&quot;</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">//DEKODOWANIE   </span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mod == <span class="stringliteral">&quot;d&quot;</span>)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        cout &lt;&lt; <span class="stringliteral">&quot;hej&quot;</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        ifstream od(file_in);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">if</span> (od)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            ifstream ke(cod);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">if</span> (ke)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                vector&lt;klucz&gt;<a class="code hl_struct" href="structkey.html">key</a>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                <a class="code hl_function" href="_funkcje_8cpp.html#a4fd58cb7af1b63d7dfc3698915102eb3">przepklucz</a>(ke, <a class="code hl_struct" href="structkey.html">key</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                ofstream odkod(file_out);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                <span class="keywordflow">if</span> (odkod)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    <a class="code hl_function" href="_funkcje_8cpp.html#a2b22b5fe6b22400199537f05cf20f6d9">odszyfr</a>(od, odkod, <a class="code hl_struct" href="structkey.html">key</a>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                    cerr&lt;&lt;<span class="stringliteral">&quot;blad otwrcia pliku of\n&quot;</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                cerr &lt;&lt; <span class="stringliteral">&quot;blad otwarcia pliku key\n&quot;</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            cerr &lt;&lt; <span class="stringliteral">&quot;blad otwarcia pliku ink\n&quot;</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    } </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
+<div class="ttc" id="a_funkcje_8cpp_html_a2b22b5fe6b22400199537f05cf20f6d9"><div class="ttname"><a href="_funkcje_8cpp.html#a2b22b5fe6b22400199537f05cf20f6d9">odszyfr</a></div><div class="ttdeci">void odszyfr(ifstream &amp;plik, ofstream &amp;in, vector&lt; klucz &gt; k)</div><div class="ttdoc">funkcja bada po kolei dlugosci zero-jedynkowych tekstow, jak odpowiednia dlugosc bedzie sie zgadzac z...</div><div class="ttdef"><b>Definition:</b> <a href="_funkcje_8cpp_source.html#l00141">Funkcje.cpp:141</a></div></div>
+<div class="ttc" id="a_funkcje_8cpp_html_a3e93889232cdd2ec293f4f45fdff91b2"><div class="ttname"><a href="_funkcje_8cpp.html#a3e93889232cdd2ec293f4f45fdff91b2">rek</a></div><div class="ttdeci">void rek(node *korz, string code, vector&lt; key &gt; &amp;kod)</div><div class="ttdef"><b>Definition:</b> <a href="_funkcje_8cpp_source.html#l00072">Funkcje.cpp:72</a></div></div>
+<div class="ttc" id="a_funkcje_8cpp_html_a4fd58cb7af1b63d7dfc3698915102eb3"><div class="ttname"><a href="_funkcje_8cpp.html#a4fd58cb7af1b63d7dfc3698915102eb3">przepklucz</a></div><div class="ttdeci">void przepklucz(ifstream &amp;plik, vector&lt; klucz &gt; &amp;k)</div><div class="ttdef"><b>Definition:</b> <a href="_funkcje_8cpp_source.html#l00126">Funkcje.cpp:126</a></div></div>
+<div class="ttc" id="a_funkcje_8cpp_html_a552783b4ad77d1b9415ad9c7e5f59da7"><div class="ttname"><a href="_funkcje_8cpp.html#a552783b4ad77d1b9415ad9c7e5f59da7">wypK</a></div><div class="ttdeci">void wypK(ofstream &amp;plik, vector&lt; key &gt;klucz)</div><div class="ttdef"><b>Definition:</b> <a href="_funkcje_8cpp_source.html#l00093">Funkcje.cpp:93</a></div></div>
+<div class="ttc" id="a_funkcje_8cpp_html_a7348ec87ee76bdd6667da216fed71a63"><div class="ttname"><a href="_funkcje_8cpp.html#a7348ec87ee76bdd6667da216fed71a63">countchar</a></div><div class="ttdeci">void countchar(ifstream &amp;plik, int *tab)</div><div class="ttdef"><b>Definition:</b> <a href="_funkcje_8cpp_source.html#l00017">Funkcje.cpp:17</a></div></div>
+<div class="ttc" id="a_funkcje_8cpp_html_a7e124d91f2bedef3c30bfd7ad618a179"><div class="ttname"><a href="_funkcje_8cpp.html#a7e124d91f2bedef3c30bfd7ad618a179">drzewo</a></div><div class="ttdeci">void drzewo(vector&lt; node &gt; &amp;tab)</div><div class="ttdef"><b>Definition:</b> <a href="_funkcje_8cpp_source.html#l00056">Funkcje.cpp:56</a></div></div>
+<div class="ttc" id="a_funkcje_8cpp_html_acf2a300150fff4f6456c67715e109401"><div class="ttname"><a href="_funkcje_8cpp.html#acf2a300150fff4f6456c67715e109401">przep</a></div><div class="ttdeci">void przep(int *tab, vector&lt; node &gt; &amp;vec)</div><div class="ttdef"><b>Definition:</b> <a href="_funkcje_8cpp_source.html#l00042">Funkcje.cpp:42</a></div></div>
+<div class="ttc" id="a_funkcje_8cpp_html_aebdaaefedd440bc0114cfbb9098e3da2"><div class="ttname"><a href="_funkcje_8cpp.html#aebdaaefedd440bc0114cfbb9098e3da2">koduj</a></div><div class="ttdeci">void koduj(ifstream &amp;plik, ofstream &amp;in, vector&lt; key &gt; klucz)</div><div class="ttdef"><b>Definition:</b> <a href="_funkcje_8cpp_source.html#l00102">Funkcje.cpp:102</a></div></div>
+<div class="ttc" id="a_funkcje_8h_html"><div class="ttname"><a href="_funkcje_8h.html">Funkcje.h</a></div></div>
+<div class="ttc" id="a_struktury_8h_html"><div class="ttname"><a href="_struktury_8h.html">Struktury.h</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ac0f2228420376f4db7e1274f2b41667c"><div class="ttname"><a href="main_8cpp.html#ac0f2228420376f4db7e1274f2b41667c">main</a></div><div class="ttdeci">int main(int argc, const char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00025">main.cpp:25</a></div></div>
+<div class="ttc" id="astructkey_html"><div class="ttname"><a href="structkey.html">key</a></div><div class="ttdef"><b>Definition:</b> <a href="_struktury_8h_source.html#l00023">Struktury.h:23</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_e99407bf630676bdcd4f739177cffcde.html">f7139937-gr15-repo</a></li><li class="navelem"><a class="el" href="dir_01c8685b4b65bde54821eb7ca16041ba.html">projekt</a></li><li class="navelem"><a class="el" href="dir_dae80aa655e54ccc2b69d8c89fd9d525.html">kodowanie_huffmana</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Wygenerowano przez <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
+  </ul>
+</div>
+</body>
+</html>

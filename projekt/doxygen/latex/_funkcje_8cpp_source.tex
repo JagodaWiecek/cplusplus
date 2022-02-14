@@ -1,0 +1,174 @@
+\hypertarget{_funkcje_8cpp_source}{}\doxysection{Funkcje.\+cpp}
+\label{_funkcje_8cpp_source}\index{C:/Users/jwiec/Dropbox/Komputer/Desktop/f7139937-\/gr15-\/repo/projekt/kodowanie\_huffmana/Funkcje.cpp@{C:/Users/jwiec/Dropbox/Komputer/Desktop/f7139937-\/gr15-\/repo/projekt/kodowanie\_huffmana/Funkcje.cpp}}
+\mbox{\hyperlink{_funkcje_8cpp}{Idź do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_funkcje_8h}{Funkcje.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_struktury_8h}{Struktury.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00015}00015 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00017}\mbox{\hyperlink{_funkcje_8cpp_a7348ec87ee76bdd6667da216fed71a63}{00017}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_funkcje_8cpp_a7348ec87ee76bdd6667da216fed71a63}{countchar}}(ifstream\& plik,\textcolor{keywordtype}{int} *tab)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00019}00019     plik.seekg(0, plik.end);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00020}00020     \textcolor{keywordtype}{int} d = plik.tellg();}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00021}00021     plik.seekg(0, plik.beg);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00023}00023     \textcolor{keywordtype}{char} buf[1000];}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00025}00025     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k=0;k<(d/1000);k++)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00026}00026     \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00027}00027         plik.read(buf, 1000);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00028}00028         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 1000; i++)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00029}00029         \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00030}00030             tab[buf[i]]++;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00031}00031         \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00032}00032     \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00033}00033     \textcolor{keywordtype}{int} licz = d -\/ plik.gcount();}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00034}00034     plik.read(buf, licz);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00035}00035     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < licz; i++)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00036}00036     \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00037}00037         tab[buf[i]]++;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00040}00040 \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00042}\mbox{\hyperlink{_funkcje_8cpp_acf2a300150fff4f6456c67715e109401}{00042}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_funkcje_8cpp_acf2a300150fff4f6456c67715e109401}{przep}}(\textcolor{keywordtype}{int}* tab, vector<node>\& vec)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00043}00043 \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00044}00044     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 256; i++)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00045}00045     \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00046}00046         \textcolor{keywordflow}{if} (tab[i] != 0)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00047}00047         \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00048}00048             \mbox{\hyperlink{structnode}{node}} z;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00049}00049             z.\mbox{\hyperlink{structnode_aefdc861fb8a2f0d9b1eb80cac8e07260}{znak}} = i;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00050}00050             z.\mbox{\hyperlink{structnode_a1dc18f6e8544445cde82f8f316e5f72f}{licznik}} = tab[i];}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00051}00051             vec.push\_back(z);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00052}00052         \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00054}00054 \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00056}\mbox{\hyperlink{_funkcje_8cpp_a7e124d91f2bedef3c30bfd7ad618a179}{00056}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_funkcje_8cpp_a7e124d91f2bedef3c30bfd7ad618a179}{drzewo}}(vector<node> \&tab)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00057}00057 \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00058}00058     \textcolor{keywordflow}{while} (tab.size() > 1)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00059}00059     \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00060}00060         \mbox{\hyperlink{structnode}{node}} temp;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00061}00061         temp.\mbox{\hyperlink{structnode_aae6b576762bec3fbcaf32a520ffd24bd}{lewe}}=\textcolor{keyword}{new} \mbox{\hyperlink{structnode}{node}}(tab[tab.size()-\/1]);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00062}00062         temp.\mbox{\hyperlink{structnode_a65ca5b98911a4870368ad09336fcfc59}{prawe}}=\textcolor{keyword}{new} \mbox{\hyperlink{structnode}{node}}(tab[tab.size()-\/2]);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00063}00063         temp.\mbox{\hyperlink{structnode_a1dc18f6e8544445cde82f8f316e5f72f}{licznik}} = tab[tab.size() -\/ 1].licznik+ tab[tab.size() -\/ 2].licznik;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00064}00064         tab.pop\_back();}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00065}00065         tab.pop\_back();}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00066}00066         tab.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00067}00067         sort(tab.begin(), tab.end(), [](\textcolor{keyword}{const} \mbox{\hyperlink{structnode}{node}}\& l, \textcolor{keyword}{const} \mbox{\hyperlink{structnode}{node}}\& p) \{return l.licznik > p.licznik; \});}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00070}00070 \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00072}\mbox{\hyperlink{_funkcje_8cpp_a3e93889232cdd2ec293f4f45fdff91b2}{00072}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_funkcje_8cpp_a3e93889232cdd2ec293f4f45fdff91b2}{rek}}(\mbox{\hyperlink{structnode}{node}} *korz, \textcolor{keywordtype}{string} code, vector<key>\&kod)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00073}00073 \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00074}00074     \textcolor{keywordflow}{if} (korz-\/>\mbox{\hyperlink{structnode_aefdc861fb8a2f0d9b1eb80cac8e07260}{znak}} != NULL)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00075}00075     \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00076}00076         \mbox{\hyperlink{structkey}{key}} temp;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00077}00077         temp.\mbox{\hyperlink{structkey_a7d678a60baa7472e1f0eab3d1ed235f6}{znak}}=korz-\/>\mbox{\hyperlink{structnode_aefdc861fb8a2f0d9b1eb80cac8e07260}{znak}};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00078}00078         temp.\mbox{\hyperlink{structkey_a8885d2c5312ca671ed76563ed868216e}{kod}}=code;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00079}00079         temp.\mbox{\hyperlink{structkey_a5a9e2aff79cbfcd7c1131529cadf1042}{lw}}=korz-\/>\mbox{\hyperlink{structnode_a1dc18f6e8544445cde82f8f316e5f72f}{licznik}};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00080}00080         kod.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00081}00081         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00083}00083     \mbox{\hyperlink{_funkcje_8cpp_a3e93889232cdd2ec293f4f45fdff91b2}{rek}}(korz-\/>\mbox{\hyperlink{structnode_aae6b576762bec3fbcaf32a520ffd24bd}{lewe}}, code + \textcolor{stringliteral}{"{}0"{}}, kod);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00084}00084     \mbox{\hyperlink{_funkcje_8cpp_a3e93889232cdd2ec293f4f45fdff91b2}{rek}}(korz-\/>\mbox{\hyperlink{structnode_a65ca5b98911a4870368ad09336fcfc59}{prawe}}, code + \textcolor{stringliteral}{"{}1"{}}, kod);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00086}00086     \textcolor{keyword}{delete} korz-\/>\mbox{\hyperlink{structnode_aae6b576762bec3fbcaf32a520ffd24bd}{lewe}};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00087}00087     \textcolor{keyword}{delete} korz-\/>\mbox{\hyperlink{structnode_a65ca5b98911a4870368ad09336fcfc59}{prawe}};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00088}00088     korz-\/>\mbox{\hyperlink{structnode_aae6b576762bec3fbcaf32a520ffd24bd}{lewe}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00089}00089     korz-\/>\mbox{\hyperlink{structnode_a65ca5b98911a4870368ad09336fcfc59}{prawe}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00090}00090     sort(kod.begin(), kod.end(), [](\textcolor{keyword}{const} \mbox{\hyperlink{structkey}{key}}\& lewy, \textcolor{keyword}{const} \mbox{\hyperlink{structkey}{key}}\& prawy) \{ return lewy.lw > prawy.lw; \});}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00091}00091 \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00093}\mbox{\hyperlink{_funkcje_8cpp_a552783b4ad77d1b9415ad9c7e5f59da7}{00093}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_funkcje_8cpp_a552783b4ad77d1b9415ad9c7e5f59da7}{wypK}}(ofstream \&plik,vector<key>\mbox{\hyperlink{structklucz}{klucz}})}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00094}00094 \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00095}00095     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{structklucz}{klucz}}.size(); i++)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00096}00096     \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00097}00097         plik  << \mbox{\hyperlink{structklucz}{klucz}}[i].znak << \textcolor{charliteral}{'\(\backslash\)t'} << \mbox{\hyperlink{structklucz}{klucz}}[i].kod << endl;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00098}00098     \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00099}00099     plik.close();}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00100}00100  \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00102}\mbox{\hyperlink{_funkcje_8cpp_aebdaaefedd440bc0114cfbb9098e3da2}{00102}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_funkcje_8cpp_aebdaaefedd440bc0114cfbb9098e3da2}{koduj}}(ifstream\& plik,ofstream \&in,vector<key> \mbox{\hyperlink{structklucz}{klucz}})}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00103}00103 \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00104}00104     \textcolor{keywordtype}{string} tekst;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00105}00105     plik.seekg(0, plik.beg);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00106}00106     \textcolor{keywordflow}{while} (getline(plik, tekst))}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00107}00107     \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00108}00108         }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00109}00109         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < tekst.length(); i++)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00110}00110         \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00111}00111             \textcolor{keywordtype}{bool} jest = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00112}00112             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{structklucz}{klucz}}.size() \&\& !jest; j++)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00113}00113             \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00114}00114                 \textcolor{keywordflow}{if} (tekst[i] == (\textcolor{keywordtype}{char})\mbox{\hyperlink{structklucz}{klucz}}[j].znak)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00115}00115                 \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00116}00116                     in << \mbox{\hyperlink{structklucz}{klucz}}[j].kod;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00117}00117                     jest = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00118}00118                 \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00119}00119             \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00120}00120         \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00121}00121     \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00122}00122     plik.close();}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00123}00123     in.close();}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00124}00124 \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00126}\mbox{\hyperlink{_funkcje_8cpp_a4fd58cb7af1b63d7dfc3698915102eb3}{00126}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_funkcje_8cpp_a4fd58cb7af1b63d7dfc3698915102eb3}{przepklucz}}(ifstream\& plik, vector<klucz> \&k)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00127}00127 \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00128}00128     \textcolor{keywordtype}{int} z;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00129}00129     \textcolor{keywordtype}{string} kod;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00130}00130     \textcolor{keywordflow}{while} (plik >> z >> kod)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00131}00131     \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00132}00132         \mbox{\hyperlink{structklucz}{klucz}} temp;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00133}00133         temp.\mbox{\hyperlink{structklucz_aa6ca2054ccf86b27b2149eb8666b1ba1}{z}} = z;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00134}00134         temp.\mbox{\hyperlink{structklucz_a4d7376cfaebb86bb1e7cb5b834fad02d}{k}} = kod;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00135}00135         k.push\_back(temp);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00136}00136     \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00137}00137     sort(k.begin(), k.end(), [](\textcolor{keyword}{const} \mbox{\hyperlink{structklucz}{klucz}}\& l, \textcolor{keyword}{const} \mbox{\hyperlink{structklucz}{klucz}}\& p) \{return l.k.length() < p.k.length();\});}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00138}00138     plik.close();}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00139}00139 \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00141}\mbox{\hyperlink{_funkcje_8cpp_a2b22b5fe6b22400199537f05cf20f6d9}{00141}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_funkcje_8cpp_a2b22b5fe6b22400199537f05cf20f6d9}{odszyfr}}(ifstream\& plik, ofstream\& in, vector<klucz> k)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00142}00142 \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00143}00143     plik.seekg(0, plik.beg);}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00144}00144     \textcolor{keywordtype}{string} tekst;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00145}00145     vector<klucz> temp = k;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00146}00146     \textcolor{keywordflow}{while} (getline(plik,tekst))}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00147}00147     \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00148}00148         }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00149}00149         \textcolor{keywordtype}{string} str\{\};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00150}00150         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < tekst.length(); i++)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00151}00151         \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00152}00152             str += tekst[i];}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00153}00153             \textcolor{keywordtype}{bool} jest = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00154}00154             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < k.size() ; j++)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00155}00155             \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00156}00156                 \textcolor{keywordflow}{if} (str == temp[j].k)}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00157}00157                 \{}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00158}00158                     in << (char)k[j].z;}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00159}00159                     str = \{\};}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00160}00160                 \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00161}00161             \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00162}00162             }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00163}00163         \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00164}00164     \}}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00165}00165     plik.close();}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00166}00166     in.close();}
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00167}00167     }
+\DoxyCodeLine{\Hypertarget{_funkcje_8cpp_source_l00168}00168 \}}
+
+\end{DoxyCode}

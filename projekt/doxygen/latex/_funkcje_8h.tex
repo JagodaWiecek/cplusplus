@@ -1,0 +1,169 @@
+\hypertarget{_funkcje_8h}{}\doxysection{Dokumentacja pliku C\+:/\+Users/jwiec/\+Dropbox/\+Komputer/\+Desktop/f7139937-\/gr15-\/repo/projekt/kodowanie\+\_\+huffmana/\+Funkcje.h}
+\label{_funkcje_8h}\index{C:/Users/jwiec/Dropbox/Komputer/Desktop/f7139937-\/gr15-\/repo/projekt/kodowanie\_huffmana/Funkcje.h@{C:/Users/jwiec/Dropbox/Komputer/Desktop/f7139937-\/gr15-\/repo/projekt/kodowanie\_huffmana/Funkcje.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}Struktury.\+h\char`\"{}}\newline
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_funkcje_8h_a7348ec87ee76bdd6667da216fed71a63}{countchar}} (ifstream \&plik, int $\ast$tab)
+\item 
+void \mbox{\hyperlink{_funkcje_8h_acf2a300150fff4f6456c67715e109401}{przep}} (int $\ast$tab, vector$<$ \mbox{\hyperlink{structnode}{node}} $>$ \&vec)
+\item 
+void \mbox{\hyperlink{_funkcje_8h_a7e124d91f2bedef3c30bfd7ad618a179}{drzewo}} (vector$<$ \mbox{\hyperlink{structnode}{node}} $>$ \&tab)
+\item 
+void \mbox{\hyperlink{_funkcje_8h_a3e93889232cdd2ec293f4f45fdff91b2}{rek}} (\mbox{\hyperlink{structnode}{node}} $\ast$korz, string code, vector$<$ \mbox{\hyperlink{structkey}{key}} $>$ \&kod)
+\item 
+void \mbox{\hyperlink{_funkcje_8h_a552783b4ad77d1b9415ad9c7e5f59da7}{wypK}} (ofstream \&plik, vector$<$ \mbox{\hyperlink{structkey}{key}} $>$\mbox{\hyperlink{structklucz}{klucz}})
+\item 
+void \mbox{\hyperlink{_funkcje_8h_ab90bb7093e8b705d94d2cbd44ad9a782}{koduj}} (ifstream \&plik, ofstream \&inp, vector$<$ \mbox{\hyperlink{structkey}{key}} $>$\mbox{\hyperlink{structklucz}{klucz}})
+\item 
+void \mbox{\hyperlink{_funkcje_8h_a4fd58cb7af1b63d7dfc3698915102eb3}{przepklucz}} (ifstream \&plik, vector$<$ \mbox{\hyperlink{structklucz}{klucz}} $>$ \&k)
+\item 
+void \mbox{\hyperlink{_funkcje_8h_a371ce3b58e49c19689cb68a689f8849d}{odszyfr}} (ifstream \&plik, ofstream \&inp, vector$<$ \mbox{\hyperlink{structklucz}{klucz}} $>$ k)
+\begin{DoxyCompactList}\small\item\em funkcja bada po kolei dlugosci zero-\/jedynkowych tekstow, jak odpowiednia dlugosc bedzie sie zgadzac z kluczem, to wypisze ja do pliku wyjsciowego \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{_funkcje_8h_a7348ec87ee76bdd6667da216fed71a63}\label{_funkcje_8h_a7348ec87ee76bdd6667da216fed71a63}} 
+\index{Funkcje.h@{Funkcje.h}!countchar@{countchar}}
+\index{countchar@{countchar}!Funkcje.h@{Funkcje.h}}
+\doxysubsubsection{\texorpdfstring{countchar()}{countchar()}}
+{\footnotesize\ttfamily void countchar (\begin{DoxyParamCaption}\item[{ifstream \&}]{plik,  }\item[{int $\ast$}]{tab }\end{DoxyParamCaption})}
+
+Funkcja majaca na celu zczytac birarnie litery z pliku do tablicy poprzez bufor. Kazda litera jest zapisana z tablicy ascii jako int. 
+\begin{DoxyParams}{Parametry}
+{\em tab} & -\/ tablica wczytujaca znaki jako inty na podstwawie tablicy ascii. \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_funkcje_8cpp_source_l00017}{17}} pliku \mbox{\hyperlink{_funkcje_8cpp_source}{Funkcje.\+cpp}}.
+
+\mbox{\Hypertarget{_funkcje_8h_a7e124d91f2bedef3c30bfd7ad618a179}\label{_funkcje_8h_a7e124d91f2bedef3c30bfd7ad618a179}} 
+\index{Funkcje.h@{Funkcje.h}!drzewo@{drzewo}}
+\index{drzewo@{drzewo}!Funkcje.h@{Funkcje.h}}
+\doxysubsubsection{\texorpdfstring{drzewo()}{drzewo()}}
+{\footnotesize\ttfamily void drzewo (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structnode}{node}} $>$ \&}]{tab }\end{DoxyParamCaption})}
+
+Funckja tworzy drzewo z vectora node. Do wskaznikow skruktury sa przypisane ostatnie wartosci vectora, po czym sa one sumowane i wrzucane do zmiennej pomocniczej \char`\"{}temp\char`\"{}. Nastepnie ostatnie te wartosci sa usuwane z listy i jest wrzucany temp do wektora. czynnosc sie ta powtarza tak dlugo, az w vectorze nie zostanie ostatnia wartosc, czyli glowny korzen. 
+
+Definicja w linii \mbox{\hyperlink{_funkcje_8cpp_source_l00056}{56}} pliku \mbox{\hyperlink{_funkcje_8cpp_source}{Funkcje.\+cpp}}.
+
+\mbox{\Hypertarget{_funkcje_8h_ab90bb7093e8b705d94d2cbd44ad9a782}\label{_funkcje_8h_ab90bb7093e8b705d94d2cbd44ad9a782}} 
+\index{Funkcje.h@{Funkcje.h}!koduj@{koduj}}
+\index{koduj@{koduj}!Funkcje.h@{Funkcje.h}}
+\doxysubsubsection{\texorpdfstring{koduj()}{koduj()}}
+{\footnotesize\ttfamily void koduj (\begin{DoxyParamCaption}\item[{ifstream \&}]{plik,  }\item[{ofstream \&}]{inp,  }\item[{vector$<$ \mbox{\hyperlink{structkey}{key}} $>$}]{klucz }\end{DoxyParamCaption})}
+
+funkcja ma analizowac pojedynczo litery z pliku wejsciowego, porownywac z vectorem klucz i na podstawie tego przepisywac do pliku wyjsciowego kod zawarty w vectorze 
+\begin{DoxyParams}{Parametry}
+{\em plik} & -\/ plik wejsciowy \\
+\hline
+{\em inp} & -\/ plik wyjsciowy \\
+\hline
+{\em klucz} & -\/ vector struktury, zawiera w zobie znaki i kody do znakow \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_funkcje_8cpp_source_l00102}{102}} pliku \mbox{\hyperlink{_funkcje_8cpp_source}{Funkcje.\+cpp}}.
+
+\mbox{\Hypertarget{_funkcje_8h_a371ce3b58e49c19689cb68a689f8849d}\label{_funkcje_8h_a371ce3b58e49c19689cb68a689f8849d}} 
+\index{Funkcje.h@{Funkcje.h}!odszyfr@{odszyfr}}
+\index{odszyfr@{odszyfr}!Funkcje.h@{Funkcje.h}}
+\doxysubsubsection{\texorpdfstring{odszyfr()}{odszyfr()}}
+{\footnotesize\ttfamily void odszyfr (\begin{DoxyParamCaption}\item[{ifstream \&}]{plik,  }\item[{ofstream \&}]{inp,  }\item[{vector$<$ \mbox{\hyperlink{structklucz}{klucz}} $>$}]{k }\end{DoxyParamCaption})}
+
+
+
+funkcja bada po kolei dlugosci zero-\/jedynkowych tekstow, jak odpowiednia dlugosc bedzie sie zgadzac z kluczem, to wypisze ja do pliku wyjsciowego 
+
+
+\begin{DoxyParams}{Parametry}
+{\em plik} & plik wejsciowy\\
+\hline
+{\em inp} & plik wyjsciowy\\
+\hline
+{\em k} & vector klucza\\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_funkcje_8cpp_source_l00141}{141}} pliku \mbox{\hyperlink{_funkcje_8cpp_source}{Funkcje.\+cpp}}.
+
+\mbox{\Hypertarget{_funkcje_8h_acf2a300150fff4f6456c67715e109401}\label{_funkcje_8h_acf2a300150fff4f6456c67715e109401}} 
+\index{Funkcje.h@{Funkcje.h}!przep@{przep}}
+\index{przep@{przep}!Funkcje.h@{Funkcje.h}}
+\doxysubsubsection{\texorpdfstring{przep()}{przep()}}
+{\footnotesize\ttfamily void przep (\begin{DoxyParamCaption}\item[{int $\ast$}]{tab,  }\item[{vector$<$ \mbox{\hyperlink{structnode}{node}} $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+funckja przepisujaca zawartosc tablicy do vectora node. Zawartosc przepisuje jako licznik a indeks komorki jako znak 
+\begin{DoxyParams}{Parametry}
+{\em $\ast$tab} & tablica int \\
+\hline
+{\em vec} & -\/ vector struktury node ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_funkcje_8cpp_source_l00042}{42}} pliku \mbox{\hyperlink{_funkcje_8cpp_source}{Funkcje.\+cpp}}.
+
+\mbox{\Hypertarget{_funkcje_8h_a4fd58cb7af1b63d7dfc3698915102eb3}\label{_funkcje_8h_a4fd58cb7af1b63d7dfc3698915102eb3}} 
+\index{Funkcje.h@{Funkcje.h}!przepklucz@{przepklucz}}
+\index{przepklucz@{przepklucz}!Funkcje.h@{Funkcje.h}}
+\doxysubsubsection{\texorpdfstring{przepklucz()}{przepklucz()}}
+{\footnotesize\ttfamily void przepklucz (\begin{DoxyParamCaption}\item[{ifstream \&}]{plik,  }\item[{vector$<$ \mbox{\hyperlink{structklucz}{klucz}} $>$ \&}]{k }\end{DoxyParamCaption})}
+
+Funckja przepisuje zawartosc z pliku wejsciowego do vectora, wykorzystywane go dekodowania 
+\begin{DoxyParams}{Parametry}
+{\em plik} & -\/ plik wejsciowy \\
+\hline
+{\em k} & -\/ vector struktury, majacy przechowywac dane z pliku \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_funkcje_8cpp_source_l00126}{126}} pliku \mbox{\hyperlink{_funkcje_8cpp_source}{Funkcje.\+cpp}}.
+
+\mbox{\Hypertarget{_funkcje_8h_a3e93889232cdd2ec293f4f45fdff91b2}\label{_funkcje_8h_a3e93889232cdd2ec293f4f45fdff91b2}} 
+\index{Funkcje.h@{Funkcje.h}!rek@{rek}}
+\index{rek@{rek}!Funkcje.h@{Funkcje.h}}
+\doxysubsubsection{\texorpdfstring{rek()}{rek()}}
+{\footnotesize\ttfamily void rek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{korz,  }\item[{string}]{code,  }\item[{vector$<$ \mbox{\hyperlink{structkey}{key}} $>$ \&}]{kod }\end{DoxyParamCaption})}
+
+Funckja nadajaca rekurencyjnie kod zero-\/jedynkowy typu string kazdemu znakowi. przechodzi od korzenia tak dlugo, dopuki galaz lewa i prawa nie beda nullptr. 
+\begin{DoxyParams}{Parametry}
+{\em korz} & pierwsza wartosc vectora \\
+\hline
+{\em code} & poczatkowy kod string \\
+\hline
+{\em kod} & vector do ktorego sa zapisywane informacje o kodzie i literach \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_funkcje_8cpp_source_l00072}{72}} pliku \mbox{\hyperlink{_funkcje_8cpp_source}{Funkcje.\+cpp}}.
+
+\mbox{\Hypertarget{_funkcje_8h_a552783b4ad77d1b9415ad9c7e5f59da7}\label{_funkcje_8h_a552783b4ad77d1b9415ad9c7e5f59da7}} 
+\index{Funkcje.h@{Funkcje.h}!wypK@{wypK}}
+\index{wypK@{wypK}!Funkcje.h@{Funkcje.h}}
+\doxysubsubsection{\texorpdfstring{wypK()}{wypK()}}
+{\footnotesize\ttfamily void wypK (\begin{DoxyParamCaption}\item[{ofstream \&}]{plik,  }\item[{vector$<$ \mbox{\hyperlink{structkey}{key}} $>$}]{klucz }\end{DoxyParamCaption})}
+
+Funckja wpisyjaca do pliku zawartosc vectora klucz. 
+\begin{DoxyParams}{Parametry}
+{\em plik} & -\/ plik do ktorego jest zapisywany klucz, znaki sa zapisane kodem ascii \\
+\hline
+{\em klucz} & -\/ vector w ktorym sa zapisane kody \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_funkcje_8cpp_source_l00093}{93}} pliku \mbox{\hyperlink{_funkcje_8cpp_source}{Funkcje.\+cpp}}.
+

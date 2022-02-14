@@ -1,0 +1,120 @@
+\begin{theindex}
+
+  \item {C:/Users/jwiec/Dropbox/Komputer/Desktop/f7139937-\/gr15-\/repo/projekt/kodowanie\_huffmana/Funkcje.cpp}, 
+		\hyperpage{9}, \hyperpage{12}
+  \item {C:/Users/jwiec/Dropbox/Komputer/Desktop/f7139937-\/gr15-\/repo/projekt/kodowanie\_huffmana/Funkcje.h}, 
+		\hyperpage{14}, \hyperpage{18}
+  \item {C:/Users/jwiec/Dropbox/Komputer/Desktop/f7139937-\/gr15-\/repo/projekt/kodowanie\_huffmana/main.cpp}, 
+		\hyperpage{18, 19}
+  \item {C:/Users/jwiec/Dropbox/Komputer/Desktop/f7139937-\/gr15-\/repo/projekt/kodowanie\_huffmana/Struktury.h}, 
+		\hyperpage{21}
+  \item {countchar}
+    \subitem {Funkcje.cpp}, \hyperpage{9}
+    \subitem {Funkcje.h}, \hyperpage{15}
+
+  \indexspace
+
+  \item {drzewo}
+    \subitem {Funkcje.cpp}, \hyperpage{10}
+    \subitem {Funkcje.h}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Funkcje.cpp}
+    \subitem {countchar}, \hyperpage{9}
+    \subitem {drzewo}, \hyperpage{10}
+    \subitem {koduj}, \hyperpage{10}
+    \subitem {odszyfr}, \hyperpage{10}
+    \subitem {przep}, \hyperpage{11}
+    \subitem {przepklucz}, \hyperpage{11}
+    \subitem {rek}, \hyperpage{12}
+    \subitem {wypK}, \hyperpage{12}
+  \item {Funkcje.h}
+    \subitem {countchar}, \hyperpage{15}
+    \subitem {drzewo}, \hyperpage{15}
+    \subitem {koduj}, \hyperpage{16}
+    \subitem {odszyfr}, \hyperpage{16}
+    \subitem {przep}, \hyperpage{16}
+    \subitem {przepklucz}, \hyperpage{17}
+    \subitem {rek}, \hyperpage{17}
+    \subitem {wypK}, \hyperpage{18}
+
+  \indexspace
+
+  \item {k}
+    \subitem {klucz}, \hyperpage{6}
+  \item {key}, \hyperpage{5}
+    \subitem {kod}, \hyperpage{5}
+    \subitem {lw}, \hyperpage{5}
+    \subitem {znak}, \hyperpage{6}
+  \item {klucz}, \hyperpage{6}
+    \subitem {k}, \hyperpage{6}
+    \subitem {z}, \hyperpage{7}
+  \item {kod}
+    \subitem {key}, \hyperpage{5}
+  \item {koduj}
+    \subitem {Funkcje.cpp}, \hyperpage{10}
+    \subitem {Funkcje.h}, \hyperpage{16}
+
+  \indexspace
+
+  \item {lewe}
+    \subitem {node}, \hyperpage{7}
+  \item {licznik}
+    \subitem {node}, \hyperpage{8}
+  \item {lw}
+    \subitem {key}, \hyperpage{5}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{19}
+  \item {main.cpp}
+    \subitem {main}, \hyperpage{19}
+
+  \indexspace
+
+  \item {node}, \hyperpage{7}
+    \subitem {lewe}, \hyperpage{7}
+    \subitem {licznik}, \hyperpage{8}
+    \subitem {prawe}, \hyperpage{8}
+    \subitem {znak}, \hyperpage{8}
+
+  \indexspace
+
+  \item {odszyfr}
+    \subitem {Funkcje.cpp}, \hyperpage{10}
+    \subitem {Funkcje.h}, \hyperpage{16}
+
+  \indexspace
+
+  \item {prawe}
+    \subitem {node}, \hyperpage{8}
+  \item {przep}
+    \subitem {Funkcje.cpp}, \hyperpage{11}
+    \subitem {Funkcje.h}, \hyperpage{16}
+  \item {przepklucz}
+    \subitem {Funkcje.cpp}, \hyperpage{11}
+    \subitem {Funkcje.h}, \hyperpage{17}
+
+  \indexspace
+
+  \item {rek}
+    \subitem {Funkcje.cpp}, \hyperpage{12}
+    \subitem {Funkcje.h}, \hyperpage{17}
+
+  \indexspace
+
+  \item {wypK}
+    \subitem {Funkcje.cpp}, \hyperpage{12}
+    \subitem {Funkcje.h}, \hyperpage{18}
+
+  \indexspace
+
+  \item {z}
+    \subitem {klucz}, \hyperpage{7}
+  \item {znak}
+    \subitem {key}, \hyperpage{6}
+    \subitem {node}, \hyperpage{8}
+
+\end{theindex}
